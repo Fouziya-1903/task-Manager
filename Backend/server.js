@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./src/config/swagger.js');
 const connectDB = require('./src/config/db.js');
@@ -30,10 +31,7 @@ app.use('/api/user', require('./src/routes/user.js'));
 
 // Root route
 app.get('/', (_req, res) => {
-  res.json({
-    success: true,
-    message: 'Task Management API is running'
-  });
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Error handler
