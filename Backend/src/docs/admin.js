@@ -189,7 +189,7 @@
  *       - bearerAuth: []
  *     parameters:
  *       - in: path
- *         name: Task id
+ *         name: id
  *         required: true
  *         schema: { type: string }
  *     requestBody:
